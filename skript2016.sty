@@ -1,0 +1,57 @@
+
+
+
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+
+%Schriftart anpassen http://tex.stackexchange.com/questions/10138/change-section-fonts
+%Liste der Schriftarten: http://www.tug.dk/FontCatalogue/sansseriffonts.html
+\setsansfont{Roboto} 
+\setmainfont{Roboto}
+
+%Seitenlayout
+\geometry{portrait,
+  left=1.7cm,
+  top=2.0cm,
+  textheight=25cm,
+  textwidth=15cm,
+  marginparsep=0.5in,
+  marginparwidth=2.5in}
+  
+
+  
+%Einrücken in der ersten Zeile eines Absatzes verhindern
+\setlength{\parindent}{0pt} 
+
+%Farben
+\definecolor{sectionblau}{HTML}{519BA7}
+\definecolor{chapterschwarz}{HTML}{4F4F51}
+\definecolor{myviolet}{HTML}{4c0068}
+
+
+%Überschriften anpassen
+\titleformat{\chapter}%
+  [block]% shape
+  {\color{chapterschwarz}}% format applied to label+text
+  {\huge\scshape\sffamily\bfseries\textcolor{chapterschwarz}\thechapter}% label
+  {1em}% horizontal separation between label and title body
+  {\huge\scshape\sffamily\bfseries\textcolor{chapterschwarz}}% before the title body
+  [{\titlerule[0.8pt]}]% after the title body
+\titlespacing{\chapter}{0mm}{1ex}{2em}
+
+\titleformat{\section}%
+  [hang]% shape
+  {\normalfont\Large\sffamily\bfseries\color{sectionblau}}% format applied to label+text
+  {}% label
+  {0pt}% horizontal separation between label and title body
+  {}% before the title body
+  []% after the title body
+\titlespacing{\section}{0mm}{1.5ex}{0.5ex}
+
+
+%Itemize Anpassung
+\renewcommand{\labelitemi}{\huge\color{sectionblau}{$\bullet$}}
